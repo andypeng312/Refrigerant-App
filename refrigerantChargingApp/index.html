@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+	<title>Refrigerant App!</title>
+	<script src='jq.js'></script>
+	<script src='calculations.js'></script>
+	<script src='units.js'></script>
+	<script src='pagescript.js'></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<form>
+		<h1>Refrigerant App</h1>
+		<div class='appscreen start' id='refrigerant'>
+			<h2>Select a refrigerant</h2>
+			<input type='radio' name='refrigerant' value='R-22'><label for='refrigerant'>R-22</label>
+		</div>
+		<div class='appscreen start' id='calc-type'>
+			<h2>Superheat or subcooling?</h2>
+			<input type='radio' name='method' value='superheat'><label for='method'>Superheat</label><br>
+			<input type='radio' name='method' value='subcooling'><label for='method'>Subcooling</label><br>
+			<input type='button' value='Continue' id='continue'>
+		</div>
+		<div class='appscreen container' id='calc-screen'>
+			<div id='units'>
+				<div id='temperature'>
+					<h3>Units of Temperature</h3>
+					<input class='unit' type='radio' name='temp' value='F' checked="true"><label for='F'>&deg;F </label>
+					<input class='unit' type='radio' name='temp' value='C'><label for='C'>&deg;C </label>
+				</div>
+				<div id='pressure'>
+					<h3>Units of Pressure</h3>
+					<span>
+						<input class='unit' type='radio' name='press' value='psi' checked="true"><label for='psi' checked="true">PSI </label>
+						<input class='unit' type='radio' name='press' value='kPa'><label for='kPa'>kPa </label>
+					</span>| 
+					<span>
+					<input class='unit' type='radio' name='pressType' value='gauge' checked="true"><label for='gauge'>gauge </label>
+						<input class='unit' type='radio' name='pressType' value='absolute'><label for='absolute'>absolute </label>
+					</span>
+				</div>
+			</div>
+			<div class='appscreen' id='superheat'>
+				<input type='checkbox' name='MFsuperheatsupplied' id='mf'><label for='MFsuperheatsupplied'>I know my target superheat</label><br>
+				<div class='mf' id='yes-mf'>
+					<input class='temp_field' type='text' name='MFsuperheat'><label for='MFsuperheat'>Target Superheat</label>
+				</div>
+				<div class='mf' id='no-mf'>
+					<input class='temp_field' type='text' name='DB'><label for='DB'>Condenser Air Dry-Bulb Temperature</label><br>
+					<input class='temp_field' type='text' name='WB'><label for='WB'>Return Air Wet-Bulb Temperature</label>
+				</div>
+				<input class='temp_field' type='text' name='LowT'><label for='LowT'>Suction Line Temperature (Low)</label><br>
+				<input class='press_field' type='text' name='LowP'><label for='LowP'>Suction Line Pressure (Low)</label><br>
+			</div>
+			<div class='appscreen' id='subcooling'>
+				<input class='temp_field' type='text' name='MFsubcool'><label for='MFsubcool'>Target Subcooling</label><br>
+				<input class='temp_field' type='text' name='HighT'><label for='HighT'>Discharge Line Temperature (High)</label><br>
+				<input class='press_field' type='text' name='HighP'><label for='HighP'>Discharge Line Pressure (High)</label><br>
+			</div>
+			<div id='end_buttons'>
+				<input type='button' value='Back' id='back'>
+				<input type='button' value='Calculate' id='calculate'>
+			</div>
+		</div>
+		<div class='appscreen' id='answer'>
+		</div>
+	</form>
+</body>
+</html>

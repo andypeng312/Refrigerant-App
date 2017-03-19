@@ -1,0 +1,101 @@
+App Checklist
+-------------
+
+I. Overall App
+   1. Looks and behaves as expected between desktop and mobile, between 
+      different browsers, and when window is resized
+   2. Form elements always respond to user interaction even if inputs are 
+      unexpected (in which case the app will provide an error messsage or 
+      warning)
+   3. Debugging messages do not show up in console in final version
+   4. Record everything that happens when the app fails any test or responds
+      in an unexpected way
+
+II. Screen 1 (selecting refrigerant and method)
+   1. Out of each set of radio buttons only one option can be selected
+   2. If an option is not selected for either refrigerant or method or both 
+      fields, an error message will pop up and the app does not move to the 
+      next screen
+   3. If user has gone back to this screen from screen 2, everything looks and 
+      behaves exactly as it did the first time around
+   4. Page elements do not shift out of place or "break" if radio buttons are 
+      pressed or if error messages pop up.
+
+III. Screen 2a (Superheat)
+   1. Default value for "Units of Temperature" are degrees Fahrenheit and 
+      default value for "Units of Pressure" are psig (PSI/gauge).
+   2. When "I know my target superheat" is checked, "Condenser Air Dry-Bulb 
+      Temperature" and "Return Air Wet-Bulb Temperature" fields are replaced 
+      with the field "Target Superheat"
+   3. When "I know my target superheat" is unchecked, the "Target Superheat"
+      field is replaced with the fields "Condenser Air Dry-Bulb Temperature"
+      and "Return Air Wet-Bulb Temperature"
+   4. The form behaves as expected and in exactly the same way when the 
+      checkbox is checked and unchecked multiple times. Page elements do not 
+      shift out of place or "break" when the form fields change.
+   5. The form fields are the correct ones for superheat and do not change even
+      when the user clicks the "Back" button and switches between the 
+      "Superheat" and "Subcooling" screens without restarting the app
+   6. Numbers in the text boxes are automatically converted when new units are 
+      selected. Check that the conversions are accurate.
+   7. When "Calculate" button is pressed:
+         a. If fields are empty or non-numeric entries are submitted, an error
+            message pops up indicating this
+         b. If numbers are out of range or an answer cannot be calculated for
+            any reason, an error message will pop up indicating this
+         c. The answer will consist of 3 sections: "Superheat",
+            "Target Superheat", and a final section that indicates whether 
+            refrigerant is to be added, removed, or if there is a perfect 
+            amount
+         d. Check that units in the answer correspond with the units selected
+            by the user in the form
+         e. Form still looks and behaves as expected after an answer has been
+            calculated. Page elements do not shift out of place or "break" and
+            all text fits within the space allowed.
+   8. Check that the form gives the correct answers:
+         a. Test with different units
+         b. Test to see that the form gives the correct units and answers when 
+            units are changed without restarting the app
+         c. Test to see that the form gives the correct units and answers when 
+            "I know my target superheat" is check or unchecked without 
+            the app restarting the app
+         d. Test to see that only the "Target Superheat" field is used in the
+            calculation when "I know my target superheat" is checked, even if
+            it was previously unchecked
+         e. Test to see that only the "Condenser Air Dry-Bulb Temperature" and 
+            "Return Air Wet-Bulb Temperature" fields are used in the 
+            calculation when "I know my target superheat" is unchecked, even if
+            it was previously checked
+   9. After an error message or an answer appears after the "Calculate" button 
+      is clicked, if the user leaves this screen by click the "Back" button and 
+      returns, the answer box or the error messages will have disappeared
+
+IV. Screen 2b (Subcooling)
+   1. Default value for "Units of Temperature" are degrees Fahrenheit and 
+      default value for "Units of Pressure" are psig (PSI/gauge).
+   2. The form fields are the correct ones for subcooling and do not change even
+      when the user clicks the "Back" button and switches between the 
+      "Superheat" and "Subcooling" screens without restarting the app
+   3. Numbers in the text boxes are automatically converted when new units are 
+      selected. Check that the conversions are accurate.
+   4. When "Calculate" button is pressed:
+         a. If fields are empty or non-numeric entries are submitted, an error
+            message pops up indicating this
+         b. If numbers are out of range or an answer cannot be calculated for
+            any reason, an error message will pop up indicating this
+         c. The answer will consist of 3 sections: "Subcooling",
+            "Target Subcooling", and a final section that indicates whether 
+            refrigerant is to be added, removed, or if there is a perfect 
+            amount
+         d. Check that units in the answer correspond with the units selected
+            by the user in the form
+         e. Form still looks and behaves as expected after an answer has been
+            calculated. Page elements do not shift out of place or "break" and
+            all text fits within the space allowed.
+   5. Check that the form gives the correct answers:
+         a. Test with different units
+         b. Test to see that the form gives the correct units and answers when 
+            units are changed without restarting the app
+   6. After an error message or an answer appears after the "Calculate" button 
+      is clicked, if the user leaves this screen by click the "Back" button and 
+      returns, the answer box or the error messages will have disappeared
